@@ -10,7 +10,7 @@ global asmSAXPY
 ; X = RDX
 ; Y = R8
 ; A = XMM3
-; size = 5th param (SET TO EAX)
+; size = 5th param (SET TO RAX)
 
 asmSAXPY:
 	PUSH RBP
