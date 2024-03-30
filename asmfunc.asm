@@ -16,7 +16,8 @@ asmSAXPY:
 	PUSH RBP
 	MOV RBP, RSP
 	ADD RBP, 16
-	MOV RAX, [RBP + 32] 
+	MOV RAX, 0
+	MOV EAX, [RBP + 32] 
 
 	DEC RAX 
 
