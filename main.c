@@ -5,7 +5,7 @@
 #define SIZE 3
 
 void cSAXPY(float* Z, float* X, float* Y, float A, int size);
-extern void asmSAXPY(float* Z, float* X, float* Y, float A, int size);
+extern void asmSAXPY(float* Z, float* X, float* Y,  int size, float A );
 void displayArray(float* Z, int size);
 
 int main() {
@@ -16,7 +16,7 @@ int main() {
 	float A = 2.0;
 
 	cSAXPY(cZ, X, Y, A, SIZE);
-	asmSAXPY(asmZ, X, Y, A, SIZE);
+	asmSAXPY(asmZ, X, Y, SIZE, A);
 
 	printf("C results: ");
 	displayArray(cZ, SIZE);
