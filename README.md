@@ -1,6 +1,6 @@
 
 ### Correctness Check for C and x86-64
-![image](https://github.com/anoobis-bot/x86-64_C/assets/99565376/9f867907-cdc1-4dea-a0eb-f997cc20c9cc)
+<img src="https://github.com/anoobis-bot/x86-64_C/assets/99565376/9f867907-cdc1-4dea-a0eb-f997cc20c9cc" width="500">
 
 ***
 
