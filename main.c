@@ -33,25 +33,27 @@ int main() {
 		randomNumberGenerator(X, SIZE, 1);
 		randomNumberGenerator(Y, SIZE, 3);
 
+		printf("Iteration %d\n", i + 1);
+
 		clock_t begin = clock();
 		cSAXPY(cZ, X, Y, A, SIZE);
-		//printf("C results:\n");
-		//displayArray(cZ, SIZE);
+		printf("C results: ");
+		displayArray(cZ, SIZE);
 		clock_t end = clock();
 		c_time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 
 		clock_t begin_asm = clock();
 		asmSAXPY(asmZ, X, Y, A, SIZE);
-		//printf("\nx86-64 results:\n");
-		//displayArray(asmZ, SIZE);
+		printf("x86-64 results: ");
+		displayArray(asmZ, SIZE);
 		clock_t end_asm = clock();
 		asm_time_spent = (double)(end_asm - begin_asm) / CLOCKS_PER_SEC;
 
 		total_c_time_spent += c_time_spent;
 		total_asm_time_spent += asm_time_spent;
 		
-		printf("Iteration %d", i + 1);
-		printf("\nExecution time in C: %.4lf seconds\n", c_time_spent);
+
+		printf("Execution time in C: %.4lf seconds\n", c_time_spent);
 		printf("Execution time in Assembly: %.4lf seconds\n\n", asm_time_spent);
 
 	}
