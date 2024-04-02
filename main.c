@@ -68,20 +68,20 @@ int main() {
 }
 
 void c_asm_correctnessCheck() {
-	float cZ[3] = { 0 };
-	float asmZ[3] = { 0 };
-	float X[3] = { 1.0, 2.0, 3.0 };
-	float Y[3] = { 11.0, 12.0, 13.0 };
+	float cZ[10] = { 0 };
+	float asmZ[10] = { 0 };
+	float X[10] = { 1.0, 2.0, 3.0 , 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0};
+	float Y[10] = { 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0 };
 	float A = 2.0;
 
-	cSAXPY(cZ, X, Y, A, 3);
-	asmSAXPY(asmZ, X, Y, A, 3);
+	cSAXPY(cZ, X, Y, A, 10);
+	asmSAXPY(asmZ, X, Y, A, 10);
 
 	printf("Correctness Check for C & x86-64\n\n");
 	printf("C results: ");
-	displayArray(cZ, 3);
+	displayArray(cZ, 10);
 	printf("x86-64 results: ");
-	displayArray(asmZ, 3);
+	displayArray(asmZ, 10);
 	printf("\n\n");
 }
 
@@ -92,6 +92,10 @@ void cSAXPY(float* Z, float* X, float* Y, float A, int size) {
 }
 
 void displayArray(float* Z, int size) {
+	if (size > 10) {
+		size = 10;
+	}
+
 	for (int i = 0; i < size; i++) {
 		if (i == size - 1)
 			printf("%.2f ", Z[i]);
