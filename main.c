@@ -38,17 +38,17 @@ int main() {
 
 		clock_t begin = clock();
 		cSAXPY(cZ, X, Y, A, SIZE);
-		printf("C results: ");
-		displayArray(cZ, SIZE);
 		clock_t end = clock();
 		c_time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+		printf("C results: ");
+		displayArray(cZ, SIZE);
 
 		clock_t begin_asm = clock();
 		asmSAXPY(asmZ, X, Y, A, SIZE);
-		printf("x86-64 results: ");
-		displayArray(asmZ, SIZE);
 		clock_t end_asm = clock();
 		asm_time_spent = (double)(end_asm - begin_asm) / CLOCKS_PER_SEC;
+		printf("x86-64 results: ");
+		displayArray(asmZ, SIZE);
 
 		total_c_time_spent += c_time_spent;
 		total_asm_time_spent += asm_time_spent;
