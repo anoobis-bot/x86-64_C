@@ -1,3 +1,5 @@
+## Sample Output
+<img src="https://github.com/anoobis-bot/x86-64_C/assets/99565376/0d8e76b3-f460-425e-b0c2-470f8501acb8" width="1000">
 
 ## Correctness Check for C and x86-64
 ### Input
